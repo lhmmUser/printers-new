@@ -92,7 +92,7 @@ export default function GenesisShipDashboard({
           params.set("search", trimmedSearch);
         }
 
-        const res = await fetch(`${baseUrl}/orders?${params.toString()}`);
+        const res = await fetch(`${baseUrl}/api/orders?${params.toString()}`);
         if (!res.ok) {
           console.error("Failed to load orders", res.status, res.statusText);
           setOrders([]);
@@ -218,7 +218,7 @@ export default function GenesisShipDashboard({
         params.set("page_size", "500");
         params.set("printer", "genesis");
 
-        const res = await fetch(`${baseUrl}/orders?${params.toString()}`);
+        const res = await fetch(`${baseUrl}/api/orders?${params.toString()}`);
         if (!res.ok) {
           console.warn("pollForLabels: /orders failed", res.status);
         } else {

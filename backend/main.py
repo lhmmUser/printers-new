@@ -148,7 +148,7 @@ def login(username: str = Body(...), password: str = Body(...)):
 
     raise HTTPException(status_code=401, detail="Invalid username or password")
 
-@app.get("/orders")
+@app.get("/api/orders")
 def get_orders(
     page: int = Query(1, ge=1),
     page_size: int = Query(25, ge=1, le=200),
