@@ -121,7 +121,7 @@ PRINTER_TOKENS = {
     "admin": ADMIN_TOKEN,
 }
 
-@app.post("api/login")
+@app.post("/api/login")
 def login(username: str = Body(...), password: str = Body(...)):
     username = username.strip().lower()
 
