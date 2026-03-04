@@ -43,7 +43,7 @@ export default function ScanPage() {
         // Auto-open PDF in new tab
         window.open(data.label_url, "_blank");
       } else {
-        setStatus(`⚠️ Unable to generate label for order ID "${id}"`);
+        setStatus(`⚠️ Unable to generate label for order ID "${id}".Check the Shiprocket balance`);
       }
     } catch {
       setStatus("❌ Something went wrong. Please try again.");

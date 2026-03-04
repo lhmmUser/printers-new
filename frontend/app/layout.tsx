@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Diffrun Admin Dashboard',
+  title: 'Diffrun Printing Dashboard',
   description: 'Manage orders, approvals, and admin workflows.',
 };
 
