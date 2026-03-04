@@ -25,7 +25,7 @@ export default function ScanPage() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/scan-order`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/scan-order`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -271,7 +271,7 @@ export default function GenesisShipDashboard({
         generate_label: true,
       };
 
-      const res = await fetch(`${baseUrl}/shiprocket/create-from-orders`, {
+      const res = await fetch(`${baseUrl}/api/shiprocket/create-from-orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -332,7 +332,7 @@ export default function GenesisShipDashboard({
 
     setIsSyncing(true);
     try {
-      const res = await fetch(`${baseUrl}/shiprocket/sync-missing-labels`, {
+      const res = await fetch(`${baseUrl}/api/shiprocket/sync-missing-labels`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });

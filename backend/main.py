@@ -460,7 +460,7 @@ def _sr_order_payload_from_doc(doc: Dict[str, Any]) -> Dict[str, Any]:
 
 
 
-@app.post("/shiprocket/create-from-orders", tags=["shiprocket"])
+@app.post("/api/shiprocket/create-from-orders", tags=["shiprocket"])
 def shiprocket_create_from_orders(
     order_ids: List[str] = Body(..., embed=True,
                                 description="Diffrun order_ids like ['#123', '#124']"),
@@ -782,7 +782,7 @@ def _sr_get_shipment_tracking_with_retries(shipment_id: int, headers: Dict[str, 
 # ============================================================
 #   FINAL VERSION — PER SHIPMENT LABEL GENERATION
 # ============================================================
-@app.post("/shiprocket/sync-missing-labels", tags=["shiprocket"])
+@app.post("/api/shiprocket/sync-missing-labels", tags=["shiprocket"])
 def shiprocket_sync_missing_labels(
     batch_size: int = 40,
     printer: str = Body("genesis")
@@ -933,7 +933,7 @@ def shiprocket_sync_missing_labels(
     }
 
 
-@app.get("/shiprocket/test-tracking/{shipment_id}", tags=["shiprocket"])
+@app.get("/api/shiprocket/test-tracking/{shipment_id}", tags=["shiprocket"])
 def shiprocket_test_tracking(shipment_id: int):
     token = _sr_login_token()
     headers = _sr_headers(token)
@@ -947,7 +947,7 @@ def shiprocket_test_tracking(shipment_id: int):
 
 
 
-@app.post("/scan-order")
+@app.post("/api/scan-order")
 def scan_order(order_id: str = Body(..., embed=True)):
     doc = orders_collection.find_one({"order_id": order_id})
     if not doc:
